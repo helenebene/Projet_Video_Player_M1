@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeListener {
 
+//coucou
 
     private ImageButton next, previous, stopMedia, playPause;
     private MediaPlayer mediaPlayer;
