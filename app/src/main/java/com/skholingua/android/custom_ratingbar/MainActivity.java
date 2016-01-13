@@ -21,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeListener {
 
 //coucou
+    // COUCOU RUDJA
 
     private ImageButton next, previous, stopMedia, playPause;
     private MediaPlayer mediaPlayer;

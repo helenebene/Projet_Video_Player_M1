@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Dan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\Dan\AndroidStudioProjects\Projet_Video_Player_M1\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0_c6279cefb38082f9980b0ad4964b507da27243f3.jar" />
+    </item>
+
+</items>
