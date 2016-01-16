@@ -113,6 +113,20 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
                     mediaPlayer.seekTo(0);
                     etat=0;
                     seekbar.setProgress(0);
+
+		    mediaPlayer.seekTo(0);
+                    etat=0;
+                    playPause.setBackgroundResource(R.drawable.pausetoplay);
+                    seekbar.setProgress(0);
+
+                    mediaPlayer.setVolume(0, 0);
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            mediaPlayer.setVolume(1, 1);
+                        }
+                    }, 2000);
                 }
             }
         });
