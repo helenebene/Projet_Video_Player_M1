@@ -20,8 +20,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeListener {
 
-//coucou
-
     private ImageButton next, previous, stopMedia, playPause;
     private MediaPlayer mediaPlayer;
     private double startTime = 0;
@@ -50,7 +48,7 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
         next = (ImageButton) findViewById(R.id.next);
         previous = (ImageButton) findViewById(R.id.previous);
         playPause = (ImageButton) findViewById(R.id.playpause);
-        playPause.setBackgroundResource(R.drawable.playtopause);
+        playPause.setBackgroundResource(R.drawable.pausetoplay);
         stopMedia = (ImageButton) findViewById(R.id.stopmedia);
 
         time = (TextView) findViewById(R.id.time);
@@ -88,7 +86,7 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
         });
 
         // Selection de la musique
-        mediaPlayer = MediaPlayer.create(this, R.raw.alex);
+        mediaPlayer = MediaPlayer.create(this, R.raw.aaron);
 
 
         seekbar = (SeekBar) findViewById(R.id.seekBar);
@@ -97,7 +95,8 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
         stopMedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mediaPlayer.isPlaying() || mediaPlayer.getDuration() > 0) {
+                if (mediaPlayer.getDuration() > 0) {
+
                     mediaPlayer.stop();
 
                     try {
@@ -109,9 +108,21 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
+
                     mediaPlayer.seekTo(0);
                     etat=0;
+                    playPause.setBackgroundResource(R.drawable.pausetoplay);
                     seekbar.setProgress(0);
+
+                    // on coupe le son pendant 2 secondes
+                    mediaPlayer.setVolume(0, 0);
+
+                    myHandler.postDelayed(new Runnable() {
+                        public void run() {
+                            mediaPlayer.setVolume(1, 1);
+                        }
+                    }, 2000);
+
                 }
             }
         });
@@ -122,7 +133,7 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
             public void onClick(View v) {
 
                 if (etat == 0) {
-                    playPause.setBackgroundResource(R.drawable.pausetoplay);
+                    playPause.setBackgroundResource(R.drawable.playtopause);
                     Toast.makeText(getApplicationContext(), "Playing sound", Toast.LENGTH_SHORT).show();
                     mediaPlayer.start();
 
@@ -146,10 +157,11 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
                     );
 
                     seekbar.setProgress((int) startTime);
-                    myHandler.postDelayed(UpdateSongTime, 100);
+
+                    myHandler.postDelayed(UpdateSongTime, 0);
                     etat = 1;
                 } else {
-                    playPause.setBackgroundResource(R.drawable.playtopause);
+                    playPause.setBackgroundResource(R.drawable.pausetoplay);
                     Toast.makeText(getApplicationContext(), "Pausing sound", Toast.LENGTH_SHORT).show();
                     mediaPlayer.pause();
                     etat = 0;

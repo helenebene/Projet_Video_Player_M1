@@ -40,10 +40,11 @@
         android:indeterminate="false"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="39dp"
-        android:layout_toLeftOf="@+id/alltime"
-        android:layout_toRightOf="@+id/time"
-        android:layout_toEndOf="@+id/time"
-        android:thumb="@drawable/music"/>
+        android:thumb="@drawable/music"
+        android:layout_alignRight="@+id/alltime"
+        android:layout_alignEnd="@+id/alltime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <SeekBar
         android:id="@+id/volbar"
@@ -52,25 +53,26 @@
         android:progressDrawable="@drawable/styled_progress"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:thumb="@drawable/thumbler_small"
+        android:thumb="@drawable/volume"
         android:indeterminate="false"
         android:minHeight="6dip"
         android:maxHeight="6dip"
         android:layout_below="@+id/ratingBar4"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text         "
+        android:text="Small Text"
         android:id="@+id/time"
         android:singleLine="true"
-        android:layout_above="@+id/seekBar"
+        android:layout_alignRight="@+id/previous"
         android:layout_toLeftOf="@+id/textview"
-        android:layout_toStartOf="@+id/textview" />
+        android:layout_above="@+id/seekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,18 +99,18 @@
         android:layout_height="30dp"
         android:id="@+id/next"
         android:background="@drawable/next"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/ratingBar4"
-        android:layout_alignEnd="@+id/ratingBar4" />
+        android:layout_alignTop="@+id/playpause"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2" />
 
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/previous"
         android:background="@drawable/previous"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignTop="@+id/stopmedia"
+        android:layout_alignLeft="@+id/textview"
+        android:layout_alignStart="@+id/textview" />
 
     <ImageButton
         android:layout_width="30dp"
@@ -116,15 +118,28 @@
         android:id="@+id/stopmedia"
         android:background="@drawable/stop"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/ratingBar4"
-        android:layout_alignStart="@+id/ratingBar4" />
+        android:layout_alignLeft="@+id/songname"
+        android:layout_alignStart="@+id/songname" />
 
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/playpause"
         android:layout_alignTop="@+id/stopmedia"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/songname"
+        android:layout_alignEnd="@+id/songname" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/ratingBar4"
+        android:layout_alignStart="@+id/ratingBar4"
+        android:layout_alignRight="@+id/textview"
+        android:layout_alignEnd="@+id/textview" />
 
 
 </RelativeLayout>

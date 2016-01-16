@@ -52,6 +52,10 @@
         "source": "D:\\Travail\\travail_M1\\Android\\Projet\\Notation\\Custom_RatingBar1\\app\\src\\main\\res\\drawable-hdpi\\play.png"
     },
     {
+        "merged": "D:\\Travail\\travail_M1\\Android\\Projet\\Notation\\Custom_RatingBar1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\volume.png",
+        "source": "D:\\Travail\\travail_M1\\Android\\Projet\\Notation\\Custom_RatingBar1\\app\\src\\main\\res\\drawable-hdpi\\volume.png"
+    },
+    {
         "merged": "D:\\Travail\\travail_M1\\Android\\Projet\\Notation\\Custom_RatingBar1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\playtopause.xml",
         "source": "D:\\Travail\\travail_M1\\Android\\Projet\\Notation\\Custom_RatingBar1\\app\\src\\main\\res\\drawable-hdpi\\playtopause.xml"
     },
